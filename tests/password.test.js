@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import { passwordTest, passwordLength, isValidPassword } from './password.js';
+import { passwordTest, passwordLength, isValidPassword } from '../js/password.js';
 // const { passwordTest, passwordLength, isValidPassword } = require('./password');
 
 describe('password tests', () => {

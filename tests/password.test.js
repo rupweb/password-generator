@@ -3,7 +3,6 @@
  */
 
 import { passwordTest, passwordLength, isValidPassword } from '../js/password.js';
-// const { passwordTest, passwordLength, isValidPassword } = require('./password');
 
 describe('password tests', () => {
   test('run a test', () => {

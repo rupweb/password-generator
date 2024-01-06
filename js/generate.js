@@ -25,19 +25,29 @@ function generatePassword() {
       return "";
     }
 
-    // Build the character set based on user preferences
-    let charSet = "";
-    if (includeLower) charSet += lowerCasedCharacters;
-    if (includeUpper) charSet += upperCasedCharacters;
-    if (includeNumbers) charSet += numericCharacters;
-    if (includeSymbols) charSet += specialCharacters;
+    // create the password
+    return createPassword(parseInt(length), includeLower, includeUpper, includeNumbers, includeSymbols);
+}
 
-    // Generate the password
-    let password = "";
-    for (let i = 0; i < length; i++) {
-      password += getRandom(charSet);
-    }
-    return password;
+function createPassword(length, includeLower, includeUpper, includeNumbers, includeSymbols) {
+  console.log('In CreatePassword');
+
+  // Array to store password characters
+  var passwordCharacters = [];
+
+  // Add character types to passwordCharacters array
+  if (includeLower) passwordCharacters = passwordCharacters.concat(lowerCasedCharacters);
+  if (includeUpper) passwordCharacters = passwordCharacters.concat(upperCasedCharacters);
+  if (includeNumbers) passwordCharacters = passwordCharacters.concat(numericCharacters);
+  if (includeSymbols) passwordCharacters = passwordCharacters.concat(specialCharacters);
+
+  // Create the password
+  var password = "";
+  for (var i = 0; i < length; i++) {
+    password += getRandom(passwordCharacters);
+  }
+
+  return password;
 }
 
 // Function for getting a random element from an array
@@ -47,4 +57,4 @@ function getRandom(arr) {
   return arr[randomIndex];
 }
 
-export { generatePassword };
+export { createPassword, generatePassword };

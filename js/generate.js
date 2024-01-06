@@ -57,4 +57,8 @@ function getRandom(arr) {
   return arr[randomIndex];
 }
 
+function showCustomConfirm() {
+  document.getElementById('customConfirm').style.display = 'block';
+}
+
 export { createPassword, generatePassword };

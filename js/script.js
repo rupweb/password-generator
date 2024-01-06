@@ -93,29 +93,18 @@ function getPasswordOptions() {
   console.log('In getPasswordOptions');
 }
 
-// Function for getting a random element from an array
-function getRandom(arr) {
+// Get references to the #generate element
+var generateBtn = document.querySelector('#generate');
 
-}
-
-// Function to generate password with user input
-function generatePassword() {
-  console.log('In generatePassword');
-}
-
-// For jest testing ensure DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-  // Get references to the #generate element
-  var generateBtn = document.querySelector('#generate');
-});
+import { generatePassword } from './generate.js';
 
 // Write password to the #password input
 function writePassword() {
-  console.log('In writePassword');
-  var password = generatePassword();
-  var passwordText = document.querySelector('#password');
+    console.log('In writePassword');
+    var password = generatePassword();
+    var passwordText = document.querySelector('#password');
 
-  passwordText.value = password;
+    passwordText.value = password;
 }
 
 // For jest testing ensure DOM is loaded
@@ -124,5 +113,4 @@ document.addEventListener('DOMContentLoaded', () => {
   generateBtn.addEventListener('click', writePassword);
 });
 
-// module.exports = { specialCharacters, numericCharacters, lowerCasedCharacters, upperCasedCharacters };
 export { specialCharacters, numericCharacters, lowerCasedCharacters, upperCasedCharacters };
